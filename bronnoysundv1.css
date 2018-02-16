@@ -78,8 +78,19 @@ a:hover {
 
 
 
-table, th, td {
+table {
 	border: 1px solid black;
+	margin: 3px;
+}
+
+
+
+th, {
+	padding: 10px;
+}
+
+td {
+	/** padding: 10px; */
 }
 
 

@@ -7,23 +7,23 @@ var input = document.querySelector("input[name = 'search']");
 var knapp = document.getElementById("searchbutton");
 var main_table = document.getElementById("main_data_table");
 
-function add_row(table, dato, beskrivelse, inn, ut) {
+function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, registrert) {
 	new_row = document.createElement("TR");
-	dato_cell = document.createElement("TD");
-	dato_cell.appendChild(dato);
-	new_row.appendChild(dato_cell);
+	organisasjonsnummer_cell = document.createElement("TD");
+	organisasjonsnummer_cell.appendChild(organisasjonsnummer);
+	new_row.appendChild(organisasjonsnummer_cell);
 	
-	beskrivelse_cell = document.createElement("TD");
-	beskrivelse_cell.appendChild(beskrivelse);
-	new_row.appendChild(beskrivelse_cell);
+	foretaksnavn_cell = document.createElement("TD");
+	foretaksnavn_cell.appendChild(foretaksnavn);
+	new_row.appendChild(foretaksnavn_cell);
 
-	inn_cell = document.createElement("TD");
-	inn_cell.appendChild(inn);
-	new_row.appendChild(inn_cell);
+	organisasjonsform_cell = document.createElement("TD");
+	organisasjonsform_cell.appendChild(organisasjonsform);
+	new_row.appendChild(organisasjonsform_cell);
 
-	ut_cell = document.createElement("TD");
-	ut_cell.appendChild(ut);
-	new_row.appendChild(ut_cell);
+	registrert_cell = document.createElement("TD");
+	registrert_cell.appendChild(registrert);
+	new_row.appendChild(registrert_cell);
 	
 	table.appendChild(new_row);
 }

@@ -29,6 +29,8 @@ footer {
 
 
 form {
+	padding-top: 100px;
+	padding-bottom: 50px;
 	display: flex;
 	justify-content: center;
 }
@@ -57,6 +59,26 @@ form {
 	border: medium;
 }
 
+#questionmark:hover {
+	color: #007354;
+}
+
+#questionmark span {
+	display: none;
+}
+
+#questionmark:hover span {
+	display:block;
+    top:1em; left:1em; width:12em;
+    border:1px solid #000;
+    text-align: center
+}
+
+span {
+	size: 2px;
+	font-size: 15px;
+}
+
 
 
 /** Copy/pase skandiabanken. Styling av logoen */
@@ -79,27 +101,28 @@ a:hover {
 
 
 table {
-	border: 1px solid black;
-	margin: 3px;
-	width: 60vw;
+	border-bottom: 1px solid black;
+	margin: 1px;
+	width: 70vw;
+}
+
+#main_data_table {
+	border-bottom: 1px solid;
 }
 
 
 
 th, {
-	
+
 }
 
 td {
 	/** padding: 10px; */
 	width: 30px;
-	padding-left: 10px; 
+	padding-left: 20px; 
 }
 
 
-table {
-	min-width: 300px;
-}
 
 #navbar {
 	display: flex;

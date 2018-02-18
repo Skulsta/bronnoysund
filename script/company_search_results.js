@@ -6,6 +6,8 @@ function search_for_X() {
 
 var results = [];
 
+var counter = 0;
+
 
 // prepare the link
 main_bilder = document.createElement("section");
@@ -17,7 +19,7 @@ function addMoviePicture() {
 
 	left = document.getElementById("left");	
 
-	addMovieLink();
+	// addMovieLink();
 	left.appendChild(main_bilder);
 	movieCounter++;
 }
@@ -46,27 +48,60 @@ function realMainSearch() {
     }
 }
 
-function numberSearch() {
+/* Methods for each search field. Using toUpperCase to make searches case insencitive */
+function mainSearch() {
 
+	for (var i in object) {
+		if (counter < 14) {
+			console.log(i);
+			var company_details = object[i];
+
+			if ((company_details["navn"].toUpperCase()).includes(query_params["search"].toUpperCase()))
+				console.log("JAAA");
+			console.log(company_details);
+		}
+	}
 }
 
 
 window.onload = function() {
 
+
+
+
 	query_params = get_query_string_parameters();
+	console.log(query_params["search"].toUpperCase());
 
-	search_results = movies_object;
+
+	var xhr = new XMLHttpRequest();
+
+	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?$filter=startswith%28navn%2C%27" + query_params["search"] + "%27%29", true);
+	xhr.responseType = "json";
+	xhr.onload = function() {
+		object = xhr.response["data"];
 
 
-	if (query_params.main_search) {
-		main_search = document.getElementById("main_search");
+    console.log(object);
+
+
+
+    console.log("WOO!");
+
+	console.log()
+
+	// search_results = movies_object;
+
+
+		main_search = document.getElementById("search");
 		//Her kan dere for eksempel kalle en søkefunksjon som søker for tittel.
+		console.log("Hei");
 		mainSearch();
-	}
+	
 
-	addMoviePicture();
 
-	console.log("WOO!")
+	
+};
+xhr.send();
 }
 
 	//Her kan dere for eksempel kalle en (display) funksjon som viser søkeresultater 

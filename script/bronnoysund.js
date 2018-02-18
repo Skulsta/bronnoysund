@@ -29,16 +29,24 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, re
 }
 
 
-function handleClick (e) {
+window.onload = function() {
 
-	var tekst = input.value;
+
+	query_params = get_query_string_parameters();
+	console.log(query_params["search"].toUpperCase());
+
 
 	var xhr = new XMLHttpRequest();
 
-	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?page=2&size=30", true);
+	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?$filter=startswith%28navn%2C%27" + query_params["search"] + "%27%29", true);
 	xhr.responseType = "json";
 	xhr.onload = function() {
 		data = xhr.response["data"];
+
+
+    console.log(data);
+
+    console.log("WOO!");
 
 
     	for (id in data) {
@@ -63,6 +71,4 @@ function handleClick (e) {
     }
 };
 xhr.send();
-main_form.reset();
 }
-

@@ -36,7 +36,7 @@ function addMoviePicture() {
 /** The movie description.*/
     function description() {
         var description = document.createElement("p");
-        content = navn;
+        content = object;
         
         if (content == null) {
             content = " [ Ingen beskrivelse ] ";
@@ -46,6 +46,28 @@ function addMoviePicture() {
             movie.appendChild(description);
         }
     }
+
+
+    function get_all_info() {
+    	for (var key in object) {
+    		var value = object[key];
+    		console.log(value);
+    		document.write("<br> - " + key + ": " + getValue(value));
+			}
+		}
+
+
+	function getValue(value) {
+		if (typeof value !== 'object' && value !== null)
+			return value;
+
+
+		for (var key in value){
+    				var newValue = value[key];
+    				return newValue;
+    			}
+	}
+    
 
 
 window.onload = function() {
@@ -58,10 +80,10 @@ window.onload = function() {
 	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet/" + query_params + ".json", true);
 	xhr.responseType = "json";
 	xhr.onload = function() {
-		navn = xhr.response["navn"];
+		object = xhr.response;
 
 
-    console.log(navn);
+    console.log(object);
 
 
 
@@ -72,6 +94,7 @@ window.onload = function() {
 
 	addMoviePicture();
 	description();
+	get_all_info();
 	
 };
 xhr.send();

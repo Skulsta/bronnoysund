@@ -1,0 +1,515 @@
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: center;
+}
+
+.top {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+header {
+	background-color: #f1f1f1;
+}
+
+.avansert_sok {
+	display: flex;
+	justify-content: flex-start;
+	padding: 5px;
+}
+
+/*Bruker i headeren*/
+.bruker {
+	display: flex;
+	order: 3;
+	margin-left: 15px;
+	margin-bottom: 20px;
+	align-items: center;
+}
+
+.brukerInfo {
+	margin: 5px;
+	padding: 0;
+	list-style: none;
+	font-size: 12px;
+	font-family: helvetica;
+	color: black;
+	align-items: center;
+}
+.profilBilde {
+	width: 27px;
+	height: 27px;
+}
+
+li {
+	list-style: none;
+}
+
+/*Logo/hjemknapp i header*/
+.meny {
+	display: flex;
+}
+
+.hjemLink {
+	font-family: helvetica;
+	font-size: 38px;
+	order: 1;
+}
+
+.hjemLink:hover {
+	background-color: darkgrey;
+}
+
+/*søkefunksjonen*/
+.searchInput {
+	border-radius: 15px;
+	border: 1px;
+	width: 80px;
+	height: 35px;
+}
+
+.søkButton {
+	border-radius: 15px;
+	border: 1px;
+	height: 35px;
+	width: 50px;
+	margin-right: 5px;
+}
+
+
+.søkButton:hover {
+	background-color: darkgrey;
+	cursor: pointer;
+}
+
+.søk {
+	align-items: center;
+	order: 4;
+}
+
+/*Dropdown meny*/
+.dropDown {
+	position: relative;
+	display: inline-block;
+	order: 0;
+}
+
+.dropKnapp {
+    color: white;
+	margin-right: 5px;
+	padding-top: 2px;
+	font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Innhold i dropdown menyen */
+.dropDownInnhold {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Knappene i drop down menyen */
+.dropDownInnhold a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: helvetica;
+}
+
+/* Bytter farge på innhold i drop down menyen */
+.dropDownInnhold a:hover {
+	background-color: #f1f1f1
+}
+
+/* Gjør drop down menyen synlig */
+.dropDown:hover .dropDownInnhold {
+    display: block;
+}
+
+.dropDown:hover .dropKnapp {
+    background-color: darkgrey;
+}
+
+.dropIcon {
+	width: 35px;
+	height: 5px;
+	background-color: black;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+/*hovedinnhold*/
+.mainSection {
+	display: flex;
+	background-color: white;
+	order: 1;
+	flex-grow: 1;
+	flex-direction: column;
+	margin-top: 7px;
+}
+
+/*Knapp til min liste*/
+.minListeButton {
+	display: flex;
+	padding: 2px;
+	background-color: #f1f1f1;
+	border-radius: 15px;
+	width: 90px;
+	height: 35px;
+	font-size: 12px;
+	font-family: helvetica;
+	font-weight: bold;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 5px;
+	order: 3;
+	border-style: solid;
+	border-color: darkgray;
+	border-width: 0.5px;
+}
+
+/*Box med vurdering og liste knapp*/
+.forsideButtons {
+	display: flex;
+	flex-direction: row;
+	order: 3;
+}
+
+.star {
+	height: 30px;
+	width: 30px;
+}
+
+.ikon {
+	height: 30px;
+	width: 30px;
+}
+
+/*knapp til vurdering av film*/
+.vurdering {
+	display: flex;
+	flex-direction: row;
+	padding: 2px;
+	background-color: #f1f1f1;
+	border-radius: 15px;
+	order: 2;
+	margin-top: 5px;
+	margin-right: 10px;
+	width: 75px;
+	height: 35px;
+	align-items: center;
+	justify-content: space-around;
+	font-family: helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: darkgray;
+	border-width: 0.5px;
+}
+
+.forsideInnhold .vurdering:hover, .minListeButton:hover {
+	background-color: darkgray;
+}
+
+.forsideInnhold {
+	display: flex;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+
+.overskrift {
+	font-weight: bold;
+	font-size: 20px;
+	font-family: helvetica;
+}
+
+.info {
+	order: 2;
+	font-family: helvetica;
+}
+
+.kommentarer {
+	display: flex;
+	flex-direction: column;
+	order: 2;
+}
+
+.kommentarInput {
+	border-radius: 15px;
+}
+
+#kommentarArea {
+	width: 190px;
+	height: 50px;
+	margin-right: 15px;
+}
+
+#kommentarForm {
+	display: flex;
+	flex-direction: column;
+}
+
+/*submit til kommentarer*/
+#knapp {
+	width: 50px;
+	border-style: solid;
+}
+
+
+	#tabell {
+		display: flex;
+		order: 2;
+		flex-direction: column;
+		margin-left: 10px;
+		width: 90%;
+	}
+
+	#movie {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#beskrivelse {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#bildeOgButtons {
+		flex-direction: column;
+		display: flex;
+	}
+
+	#cover {
+		height: 260px;
+		width: 180px;
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+
+footer {
+	background-color: #f1f1f1;
+	color: darkgray;
+	border-top: 5px;
+	text-align: center;
+}
+
+.tabell {
+	order: 5;
+}
+
+#review {
+	display: flex;
+	flex-direction: row;
+	padding: 2px;
+	background-color: #f1f1f1;
+	border-radius: 15px;
+	order: 1;
+	margin-top: 5px;
+	width: 75px;
+	height: 35px;
+	align-items: center;
+	justify-content: space-around;
+	font-family: helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	margin-right: 10px;
+	border-style: solid;
+	border-color: darkgray;
+	border-width: 0.5px;
+}
+
+#genre {
+	font-family: helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	
+}
+
+#kommentar {
+	margin-left: 10px;
+}
+
+#reviews {
+	display: flex;
+	border-left: 2px solid;
+	border-color: lightgrey;
+	flex-direction: column;
+	margin-bottom: 20px;
+	width: 300px;
+}
+
+#trailer {
+	width: 360px;
+	border: none;
+}
+
+#player {
+	width: 100px;
+}
+
+
+/* Små mobilskjermer */
+@media (max-width: 381px) {
+
+	header {
+		width: 100%;
+	}
+
+	#cover {
+		height: 190px;
+		width: 140px;
+		margin: 5px;
+		transition: width 0.6s, height 0.6s;
+		transition-timing-function: ease-out;
+	}
+
+	.bruker {
+		display: none;
+	}
+
+	#trailer {
+		width: 300px;
+	}
+
+}
+
+@media (min-width: 768px) {
+
+	main {
+		display: flex;
+		flex-direction: row;
+	}
+
+	header {
+		width: 100%;
+	}
+
+	footer {
+		width: 100%;
+	}
+
+	.mainSection {
+		flex-direction: column;
+		align-items: center;
+
+	}
+
+	.aside {
+		display: flex;
+		width: 72%
+	}
+
+	#forsideBilde {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.infoFilm {
+		display: flex;
+
+	}
+
+	.forsideInnhold {
+		flex-direction: row;
+	}
+
+	.minListeButton {
+		order: 3;
+	}
+
+	.infomedia-banner {
+		width: 350px;
+		height: 20px;
+		margin-top: 5px;
+	}
+
+	.vurdering {
+		margin-right: 10px;
+	}
+
+	.searchInput {
+		width: 150px;
+	}
+
+	.bruker {
+	display: flex;
+	order: 3;
+	margin-left: 15px;
+	align-items: center;
+	}
+
+	#tabell {
+		flex-direction: row;
+	}
+
+	#trailerOgBilde {
+		display: flex;
+		flex-direction: row;
+	}	
+
+	#trailer {
+		width: 500px;
+		height: 275px;
+	}
+
+	/*boks med rating og kommentarer*/
+	#reviews {
+		display: flex;
+		border-left: 2px solid;
+		border-color: lightgrey;
+		flex-direction: column;
+		margin-bottom: 20px;
+		width: 300px;
+	}
+
+	/*info om filmen*/
+	#beskrivelse {
+		max-width: 550px;
+		margin-right: 20px;
+	}
+
+	.kommentarer {
+		margin-left: 10px;
+	}
+
+	/*knapper til vurdering og min liste*/
+	.forsideButtons {
+		flex-direction: row;
+	}
+
+	/*forside bilder og vurdering/min liste knapper*/
+	#bildeOgButtons {
+		flex-direction: column;
+	}
+
+	/*div til film trailer*/
+	#player {
+		width: 100%;
+	}
+
+
+
+}

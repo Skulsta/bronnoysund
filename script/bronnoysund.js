@@ -28,7 +28,9 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, re
 	table.appendChild(new_row);
 }
 
+
 function handleClick (e) {
+
 	var tekst = input.value;
 
 	var xhr = new XMLHttpRequest();
@@ -38,13 +40,7 @@ function handleClick (e) {
 	xhr.onload = function() {
 		data = xhr.response["data"];
 
-		for (id in data) {
-			dataobjekt = data[id];
-			console.log(dataobjekt["organisasjonsnummer"]);
 
-		}
-
-    // show mylist
     	for (id in data) {
     		dataobjekt = data[id];
     		var organisasjonsnummer = document.createTextNode(dataobjekt["organisasjonsnummer"]);
@@ -53,7 +49,7 @@ function handleClick (e) {
     		var linkText = document.createTextNode(dataobjekt["navn"]);
     		foretaksnavn.appendChild(linkText);
     		foretaksnavn.title = dataobjekt["navn"];
-    		foretaksnavn.href = "#";
+    		foretaksnavn.href = "companypage.html?id=" + dataobjekt["organisasjonsnummer"];
     		document.body.appendChild(foretaksnavn);
 
     		// var foretaksnavn = document.createTextNode(dataobjekt["navn"]);

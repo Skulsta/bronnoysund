@@ -7,11 +7,41 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name = "description" content ="Skandiabanken">
+	<meta name = "description" content ="Infomedia MediaDB">
+
+	<meta name = "author" content ="Vegar Ellingsen og Stian Skulstad">
+
+	<link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+
+	<link rel="stylesheet" href="InfomediaDB.css">
+
+	<title>InfomediaDB</title>
+
+	<script type="text/javascript" src="script/company_earch_results.js"></script>
+	<script type="text/javascript" src="script/object.js"></script>
+	<script type="text/javascript" src="script/company_query_params.js"></script>
+	<script type="text/javascript" src="script/company_link_preperation.js"></script>
+	
+</head>
+
+<body>
+
+	<!--header med hjemknapp og søkfunksjon-->
+	<header>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name = "description" content ="Brønnøysundregistrene">
 
 	<meta name = "author" content ="Stian Skulstad">
 
-	<link rel="stylesheet" href="bronnoysundv2.css">
+	<link rel="stylesheet" href="bronnoysundv1.css">
 
 	<!-- <script type="text/javascript" src="users.js"></script> -->
 
@@ -19,7 +49,7 @@
 
 </head>
 
-<body>
+<body class = "Site">
 
 	<header>
 
@@ -27,7 +57,7 @@
 		<!-- Copy/paste fra brreg.no- Logoen -->
 
 		<div id="title-header-logo" class="header__logo">
-			<a href="index.html">
+			<a href="indexv1.html">
 				<span class="accessibility"></span>
 				<span class="icon-text icon-text--home hide-on-tablet"></span>
 				<!--?xml version="1.0" encoding="utf-8"?-->
@@ -72,41 +102,34 @@
 			</a>
 		</div>
 
-
-	</header>
-
-	<main class = "Site-Content, Site">
-
-		<p id="searchInstructions"> Foretaksnavn eller organisasjonsnummer </p>
-
-		<form action="#" name="main_form">
-			<input id="search" type="text" name="search">
-			<input onclick="handleClick()" id="searchbutton" type="submit" name="submit" value="Last inn">
-		</form>
-
-		<!-- Option to choose box view or list view if I get that far.
+		<!-- In case I have time for extra functionality
 		<section id="navbar">
-			<p><a id="listView" href="#"> List view </a></p>
-			<p><a id="boxView" href="#"> Box view </a></p>
+			<p><a href="#"> Listevisning </a></p>
+			<p><a href="#"> Boksvisning </a></p>
 
 		</section>
 		-->
 
 
+	</header>
+
+	<main class = "Site-Content">
+			<form action="#" name="main_form">
+				<input id="search" type="text" name="search">
+				<input onclick="handleClick()" id="searchbutton" type="submit" name="submit" value="Last inn">
+				<!-- <img id="questionmark" src="question_mark.png"> -->
+				<a href="#" id="questionmark">? <span> Søk etter foretaksnavn eller organisasjonsnummer </span></a>
+
+			</form>
 
 
-<!-- 
-		<button type="button">Add row</button> 
-
-	-->
 		</br> </br>
 
 	
 
 
 		<table id="main_data_table">
-			<!-- <caption><h3></h3></caption> -->
-			<tr><th>Dato</th><th>Beskrivelse</th><th>Inn</th><th>Ut</th></tr>
+			<tr><th>Orgnr.</th><th>Navn</th><th>Poststed</th><th>Registrert i Enhetsregisteret</th></tr>
 
 		</table>
 
@@ -116,9 +139,46 @@
 	<!-- 
 	<footer>
 		<hr>
-		<center> Skandiabanken | <a class = "footer_text" href="stian@skandiabanken.no"> Send mail Something clever </a> </center>
+		<center> Brønnøysundregistrene | <a class = "footer_text" href="info@Brønnøysundregistrene.no"> Send mail Something clever </a> </center>
 	</footer>
 	--> 
-	<script src="Skandiabanken.js"></script>
+	<script src="bronnoysund.js"></script>
+</body>
+</html>
+	</header>
+
+	<main>
+		<section class="main-content">
+
+			<!-- Skjemaet gir mulighet for å ha en mer avansert søk. -->
+			<form action="#" name="search" id="avansertSøkForm">
+				<div>
+					<h1><center>Avansert søk</center></h1>
+				</div>
+				<fieldset>
+					<legend>Søk</legend>
+					<div class="advancedField">
+						<label for="film_title">Film tittel</label>
+						<input id="film_title" name="film_title" class="advancedSearch" type="text" placeholder="e.g. King Kong" >
+					</div>
+					<input class="søkButton" type="submit" value="Søk">
+				</fieldset>
+				
+			</form>
+
+
+			<aside id="left">
+				<h3> Resultat </h3>
+				<p id="searchReminder"> Utfør et søk for å se resultater. </p>
+
+		</aside>
+
+	</section>
+
+</main>
+
+
+<footer>InfomediaDB | <a href="mailto:post@vinfomediadb.no" target="_top"> Send Mail</a></footer>
+
 </body>
 </html>

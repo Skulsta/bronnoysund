@@ -84,7 +84,7 @@ span {
 
 
 a:link, a:visited {
-	
+	color: black;
 }
 
 a:hover {
@@ -108,6 +108,7 @@ table {
 
 #main_data_table {
 	width: 40vw;
+	border-bottom: 1px solid black;
 }
 
 

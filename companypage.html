@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8"/>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name = "description" content ="Company page">
+
+    <meta name = "author" content ="Stian Skulstad">
+
+    <link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet">
+
+    <link rel="stylesheet" href="companypage.css">
+
+    <title>Company Page</title>
+
+    <script type="text/javascript" src="script/bronnoysund.js"></script>
+    <script type="text/javascript" src="script/company_query_params.js"></script>
+    <script type="text/javascript" src="script/realcompanypage.js"></script>
+    <!-- <script type="text/javascript" src="script/company_search_results.js"></script> -->
+
+  </head> 
+  <body>
+
+    <main>
+      <section class="mainSection">
+
+        <section class="forsideInnhold">
+        <!--Gruppe med bilde, trailer og knapper til vurdering-->
+          <section id="bildeOgButtons">
+            <section id="trailerOgBilde">
+              <!--Cover bilde og trailer-->
+              <div id="forsideBilde"></div>
+              <div id ="player"></div>
+            </section>
+
+              <!--Knapper til vurdering og min liste-->
+              <section class="forsideButtons">
+                <a class="minListeButton" href="#">
+                  <!-- <img class="ikon" alt="+" src="pluss_icon.ico"> -->
+                  <p>Min liste</p>
+                </a>
+
+                <a class="vurdering" href="#">
+                  <!-- <img class="star" alt="stjerne" src="star-icon.png"> -->
+                  <p>Vurder</p>
+                </a>
+                <div id="review" border=1>
+              <caption>Karakter</caption></div>
+              </section>
+            </section>
+
+        </section>
+
+        
+  <!-- Alt under er en enkelt formatert tabell som viser all informasjon som er tilgjengelig -->
+  <section id="tabell">
+
+      <section id="beskrivelse">
+        <h2 id="otitle"></h2>
+        <div id="genre" border=1>
+          <caption>Genre</caption></div>
+        <div id="folk"></div>        
+        <div id="movie"></div>
+      </section>
+
+      <section id="reviews">  
+        <div id = "kommentar"></div>
+            
+          <!--Vurdering av film/kommentarer-->
+          <section class="kommentarer">
+            <p class="overskrift">Skriv en kommentar</p>
+
+            <form action="#" name="kommentarForm" id="kommentarForm">
+              <textarea id="kommentarArea" name="kommentar"></textarea> 
+              
+              <input id="knapp" type="submit" name="submit" value="Lagre">
+            </form>
+          </section>
+      </section> 
+
+    </section>
+  </body>
+        </section>
+      </section>
+    </main>
+    <!-- <footer>Kontaktinformasjon: InfomediaDB | <a href="mailto:post@vinfomediadb.no" target="_top"> Send Mail</a></footer> -->
+</html>

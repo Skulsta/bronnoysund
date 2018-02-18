@@ -52,20 +52,16 @@ form {
 
 #questionmark {
 	margin: 2px;
-	border: 0.1px;
 	width: 20px;
 	height: 35px;
 	font-size: 30px;
-	border: medium;
 }
 
-#questionmark:hover {
-	color: #007354;
-}
 
 #questionmark span {
 	display: none;
 }
+
 
 #questionmark:hover span {
 	display:block;
@@ -75,7 +71,6 @@ form {
 }
 
 span {
-	size: 2px;
 	font-size: 15px;
 }
 
@@ -84,42 +79,48 @@ span {
 /** Copy/pase skandiabanken. Styling av logoen */
 
 .header__logo {
-	width: 300px;
 	padding: 20px;
 }
 
 
 a:link, a:visited {
-	color: black;
-	text-decoration: none;
+	
 }
 
 a:hover {
-	color: #007354;
+	
+}
+
+a:active {
+
 }
 
 
-
+/** 
 table {
 	border-bottom: 1px solid black;
 	margin: 1px;
 	width: 70vw;
 }
 
+*/
+
+
 #main_data_table {
-	border-bottom: 1px solid;
+	width: 40vw;
 }
 
 
 
 th, {
-
+	/** padding-bottom: 10px; */
 }
 
 td {
 	/** padding: 10px; */
 	width: 30px;
-	padding-left: 20px; 
+	padding-left: 50px; 
+	padding-top: 10px;
 }
 
 

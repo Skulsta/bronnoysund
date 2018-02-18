@@ -48,14 +48,22 @@ function handleClick (e) {
     	for (id in data) {
     		dataobjekt = data[id];
     		var organisasjonsnummer = document.createTextNode(dataobjekt["organisasjonsnummer"]);
-    		var foretaksnavn = document.createTextNode(dataobjekt["navn"]);
 
-    		var orgformobjekt = dataobjekt["orgform"];
-    		var organisasjonsform = document.createTextNode(orgformobjekt["kode"]);
+    		var foretaksnavn = document.createElement("a");
+    		var linkText = document.createTextNode(dataobjekt["navn"]);
+    		foretaksnavn.appendChild(linkText);
+    		foretaksnavn.title = dataobjekt["navn"];
+    		foretaksnavn.href = "#";
+    		document.body.appendChild(foretaksnavn);
+
+    		// var foretaksnavn = document.createTextNode(dataobjekt["navn"]);
+
+    		var adresseobjekt = dataobjekt["forretningsadresse"];
+    		var poststed = document.createTextNode(adresseobjekt["poststed"]);
     		var registrert =document.createTextNode(dataobjekt["registreringsdatoEnhetsregisteret"]);
 
 
-    		add_row(main_table, organisasjonsnummer, foretaksnavn, organisasjonsform, registrert);
+    		add_row(main_table, organisasjonsnummer, foretaksnavn, poststed, registrert);
     }
 };
 xhr.send();

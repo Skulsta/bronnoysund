@@ -28,27 +28,7 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, re
 	table.appendChild(new_row);
 }
 
-
-window.onload = function() {
-
-
-	query_params = get_query_string_parameters();
-	console.log(query_params["search"].toUpperCase());
-
-
-	var xhr = new XMLHttpRequest();
-
-	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?$filter=startswith%28navn%2C%27" + query_params["search"] + "%27%29", true);
-	xhr.responseType = "json";
-	xhr.onload = function() {
-		data = xhr.response["data"];
-
-
-    console.log(data);
-
-    console.log("WOO!");
-
-
+function display_companies(data) {
     	for (id in data) {
     		dataobjekt = data[id];
     		var organisasjonsnummer = document.createTextNode(dataobjekt["organisasjonsnummer"]);
@@ -69,6 +49,28 @@ window.onload = function() {
 
     		add_row(main_table, organisasjonsnummer, foretaksnavn, poststed, registrert);
     }
+}
+
+
+window.onload = function() {
+
+
+	query_params = get_query_string_parameters();
+
+
+	if (query_params.search) {
+	var xhr = new XMLHttpRequest();
+
+	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?$filter=startswith%28navn%2C%27" + query_params["search"] + "%27%29", true);
+	xhr.responseType = "json";
+	xhr.onload = function() {
+		data = xhr.response["data"];
+
+	
+	display_companies(data);
+	
+
 };
 xhr.send();
+}
 }

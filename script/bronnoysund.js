@@ -89,8 +89,32 @@ function keyup(e) {
     	console.log(inputTextValue);
     	makeSearch();
   		}
+
+    if(inputTextValue.length === 9  ) {
+      console.log("YAY");
+      var realValue = document.getElementById("companySearch").value;
+      console.log(realValue);
+    }
 	}
 }
+
+function numberSearch() {
+  if(inputTextValue.length === 9) {
+  }
+}
+
+document.getElementById("searchbutton").onclick = function() {
+  console.log("WAA");
+  window.location.href = "companypage.html?id=" + inputTextValue;
+}
+
+/*
+  if(document.getElementById("search").length === 9) {
+  document.getElementById("search").onclick = function() {
+    location.href = "companypage.html?id=" + inputTextValue;
+  }
+}
+*/
 
 function makeSearch() {
 	var xhr = new XMLHttpRequest();

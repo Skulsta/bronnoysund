@@ -4,13 +4,6 @@ html {
 }
 
 
-
-.top {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 10px;
-}
-
 .Site {
 	display: flex;
 	flex-direction: column;
@@ -18,14 +11,9 @@ html {
 	padding-top: 100px;
 }
 
-
-
 .header__logo {
 	padding-top: 10px;
 }
-
-
-
 
 a:link {
 	text-decoration: none;
@@ -37,51 +25,5 @@ a:visited {
 }
 
 
-
-
-	#tabell {
-		display: flex;
-		order: 2;
-		flex-direction: column;
-		margin-left: 10px;
-		width: 90%;
-	}
-
-
-
-footer {
-	background-color: #f1f1f1;
-	color: darkgray;
-	border-top: 5px;
-	text-align: center;
-}
-
-
-
-/* Små mobilskjermer */
-@media (max-width: 381px) {
-
-	header {
-		width: 100%;
-	}
-
-
-
-}
-
-@media (min-width: 768px) {
-
-	main {
-		display: flex;
-		flex-direction: row;
-	}
-
-	header {
-		width: 100%;
-	}
-
-	footer {
-		width: 100%;
-	}
 
 }

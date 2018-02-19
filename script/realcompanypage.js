@@ -1,5 +1,5 @@
 
-
+/*
 function add_row(table, left, right) {
     new_row = document.createElement("TR");
     left_cell = document.createElement("TD");
@@ -33,7 +33,7 @@ function addMoviePicture() {
 }
 
 
-/** The movie description.*/
+/** The movie description.
     function description() {
         var description = document.createElement("p");
         content = object;
@@ -99,3 +99,5 @@ window.onload = function() {
 };
 xhr.send();
 }
+
+*/

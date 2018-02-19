@@ -31,39 +31,39 @@
 <tbody>
 <tr>
 <td><span class="text">Navn</span></td>
-<td>STACC INSIGHT AS</td>
+<td id="movie"></td>
 </tr>
 <tr>
 <td><span class="text">Organisasjonsnummer</span></td>
-<td>930851752</td>
+<td id="orgnr"></td>
 </tr>
 <tr>
 <td><span class="text">Organisasjonsform</span></td>
-<td>Aksjeselskap</td>
+<td id="orgform"></td>
 </tr>
 <tr>
 <td><span class="text">Forretningsadresse</span></td>
-<td>Damsgårdsveien 50</td>
+<td id="adresse"></td>
 </tr>
 <tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Poststed</span></td>
+<td><span class="text">Poststed</span></td>
 <td><table>
 <tbody>
 <tr>
-<td>5058</td>
-<td>BERGEN</td>
+<td id="postnummer"></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </td>
 </tr>
 <tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Kommune</span></td>
+<td><span class="text">Kommune</span></td>
 <td><table>
 <tbody>
 <tr>
-<td>1201</td>
-<td>BERGEN</td>
+<td id="kommune"></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -71,53 +71,32 @@
 </tr>
 <tr>
 <td><span class="text">Land</span></td>
-<td>Norge</td>
+<td id="land"></td>
 </tr>
-<tr>
-<td><span class="text">Postadresse</span></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Poststed</span></td>
-<td><table>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
+
 <tr>
 <td><span class="text">Målform</span></td>
-<td>Bokmål</td>
+<td id="malform"></td>
 </tr>
-<tr>
-<td><span class="text">Hjemmeside</span></td>
-<td>
-<form id="j_idt61" name="j_idt61" method="post" action="/oppslag/enhetsregisteret/enhet.xhtml" enctype="application/x-www-form-urlencoded">
-<input type="hidden" name="j_idt61" value="j_idt61">
 
-<script type="text/javascript" src="/oppslag/enhetsregisteret/javax.faces.resource/jsf.js.xhtml?ln=javax.faces"></script>
-<a href="#" onclick="mojarra.jsfcljs(document.getElementById('j_idt61'),{'j_idt61:j_idt62':'j_idt61:j_idt62'},'_blank');return false"></a><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="8666619316670383832:-727108685060850599" autocomplete="off">
+
 </form></td>
 </tr>
 <tr>
 <td><span class="text">Registrert i Enhetsregisteret</span></td>
-<td>19.02.1995</td>
+<td id="enhetsregisteret"></td>
 </tr>
 <tr>
 <td><span class="text">Stiftelsesdato</span></td>
-<td>02.11.1981</td>
+<td id="stiftelsesdato"></td>
 </tr>
 <tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Næringskode</span></td>
+<td><span class="text">Næringskode</span></td>
 <td><table>
 <tbody>
 <tr>
-<td>58.290</td>
-<td>Utgivelse av annen programvare</td>
+<td id="naeringskode1"></td>
+<td></td>
 </tr>
 <tr>
 <td></td>
@@ -136,33 +115,30 @@
 <td><table>
 <tbody>
 <tr>
-<td>2100</td>
-<td>Private aksjeselskaper mv.</td>
+<td id="institusjonellSektorkode"></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </td>
 </tr>
 <tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Registrert i</span></td>
+<td><span class="text">Registrert i</span></td>
 <td><table>
 <tbody>
 <tr>
-<td>Merverdiavgiftsregisteret</td>
-</tr>
-<tr>
-<td>Foretaksregisteret</td>
+<td id="registre"></td>
 </tr>
 </tbody>
 </table>
 </td>
 </tr>
 <tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Frivillig registrert i MVA</span></td>
+<td><span class="text">Frivillig registrert i MVA</span></td>
 <td><table>
 <tbody>
 <tr>
-<td>Utleier av bygg eller anlegg</td>
+<td id="frivilligmva"></td>
 </tr>
 </tbody>
 </table>
@@ -170,14 +146,16 @@
 </tr>
 <tr>
 <td><span class="text">Sist innsendte årsregnskap</span></td>
-<td>2016</td>
+<td id="aarsregnskap"></td>
 </tr>
 <tr>
 <td><span class="text">Antall ansatte</span></td>
-<td>33</td>
+<td id="ansatte"></td>
 </tr>
 <tr>
-<td><span class="verticalAlignTop" style="font-weight: bold">Enhetsstatus</span></td>
+<td><span class="text"></span></td>
+<td id="konkurs"></td>
+</tr>
 <td><table>
 <tbody>
 <tr><td></td></tr></tbody>
@@ -187,7 +165,7 @@
 </tbody>
 </table>
 
-        
+
 
         <section class="forsideInnhold">
         <!--Gruppe med bilde, trailer og knapper til vurdering-->
@@ -225,7 +203,7 @@
         <div id="genre" border=1>
           <caption>Genre</caption></div>
         <div id="folk"></div>        
-        <div id="movie"></div>
+        <div></div>
       </section>
 
       <section id="reviews">  

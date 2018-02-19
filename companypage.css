@@ -292,6 +292,20 @@ a:visited {
 		flex-direction: column-reverse;
 	}
 
+	#konkurs {
+		color: red;
+	}
+
+	#orgnr {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#navn {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
 	#beskrivelse {
 		display: flex;
 		flex-direction: column;

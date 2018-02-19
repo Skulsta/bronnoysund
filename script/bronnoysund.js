@@ -28,7 +28,15 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, st
 	table.appendChild(new_row);
 }
 
-function display_companies(data) {
+function isBankrupt(dataobjekt) {
+		if(dataobjekt === "J") {
+			console.log(dataobjekt["konkurs"]);
+			return true;
+		}
+	}
+
+
+function display_companies() {
     	for (id in data) {
     		dataobjekt = data[id];
     		var organisasjonsnummer = document.createTextNode(dataobjekt["organisasjonsnummer"]);
@@ -38,7 +46,10 @@ function display_companies(data) {
     		foretaksnavn.appendChild(linkText);
     		foretaksnavn.title = dataobjekt["navn"];
     		foretaksnavn.href = "companypage.html?id=" + dataobjekt["organisasjonsnummer"];
+
     		document.body.appendChild(foretaksnavn);
+    		if(isBankrupt(dataobjekt["konkurs"]))
+    			foretaksnavn.style.color = "red";
 
     		var adresseobjekt = dataobjekt["forretningsadresse"];
     		var poststed = document.createTextNode(adresseobjekt["poststed"]);
@@ -65,7 +76,9 @@ window.onload = function() {
 		data = xhr.response["data"];
 
 	
-	display_companies(data);
+	display_companies();
+
+	console.log(isBankrupt());
 	
 
 };

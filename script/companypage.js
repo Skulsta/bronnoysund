@@ -197,8 +197,10 @@ function add_row(table, left, right) {
 
 window.onload = function() {
 
+    
     query_params = get_query_string_parameters().id;
-    // console.log(query_params);
+    console.log(query_params);
+
 
     var xhr = new XMLHttpRequest();
 

@@ -37,6 +37,7 @@ function isBankrupt(dataobjekt) {
 		}
 	}
 
+var dataobjekt;
 
 function display_companies() {
     	for (id in data) {
@@ -90,31 +91,26 @@ function keyup(e) {
     	makeSearch();
   		}
 
-    if(inputTextValue.length === 9  ) {
+    if(inputTextValue.length === 9 ) {
       console.log("YAY");
       var realValue = document.getElementById("companySearch").value;
       console.log(realValue);
+    }
+
+    if(e.keyCode == 13) {
+      console.log("You hit enter!");
+      numberSearch();
     }
 	}
 }
 
 function numberSearch() {
-  if(inputTextValue.length === 9) {
+  if(isNaN(inputTextValue) === false && inputTextValue.length === 9)
+    window.location.href = "companypage.html?id=" + inputTextValue;
+  else
+    makeSearch();
   }
-}
 
-document.getElementById("searchbutton").onclick = function() {
-  console.log("WAA");
-  window.location.href = "companypage.html?id=" + inputTextValue;
-}
-
-/*
-  if(document.getElementById("search").length === 9) {
-  document.getElementById("search").onclick = function() {
-    location.href = "companypage.html?id=" + inputTextValue;
-  }
-}
-*/
 
 function makeSearch() {
 	var xhr = new XMLHttpRequest();

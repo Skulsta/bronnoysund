@@ -7,7 +7,7 @@ var input = document.querySelector("input[name = 'search']");
 var knapp = document.getElementById("searchbutton");
 var main_table = document.getElementById("main_data_table");
 
-function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, registrert) {
+function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, stiftelsesdato) {
 	new_row = document.createElement("TR");
 	organisasjonsnummer_cell = document.createElement("TD");
 	organisasjonsnummer_cell.appendChild(organisasjonsnummer);
@@ -21,9 +21,9 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, re
 	organisasjonsform_cell.appendChild(organisasjonsform);
 	new_row.appendChild(organisasjonsform_cell);
 
-	registrert_cell = document.createElement("TD");
-	registrert_cell.appendChild(registrert);
-	new_row.appendChild(registrert_cell);
+	stiftelsesdato_cell = document.createElement("TD");
+	stiftelsesdato_cell.appendChild(stiftelsesdato);
+	new_row.appendChild(stiftelsesdato_cell);
 	
 	table.appendChild(new_row);
 }
@@ -40,14 +40,12 @@ function display_companies(data) {
     		foretaksnavn.href = "companypage.html?id=" + dataobjekt["organisasjonsnummer"];
     		document.body.appendChild(foretaksnavn);
 
-    		// var foretaksnavn = document.createTextNode(dataobjekt["navn"]);
-
     		var adresseobjekt = dataobjekt["forretningsadresse"];
     		var poststed = document.createTextNode(adresseobjekt["poststed"]);
-    		var registrert =document.createTextNode(dataobjekt["registreringsdatoEnhetsregisteret"]);
+    		var stiftelsesdato =document.createTextNode(dataobjekt["stiftelsesdato"]);
 
 
-    		add_row(main_table, organisasjonsnummer, foretaksnavn, poststed, registrert);
+    		add_row(main_table, organisasjonsnummer, foretaksnavn, poststed, stiftelsesdato);
     }
 }
 

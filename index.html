@@ -7,15 +7,17 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name = "description" content ="Skandiabanken">
+	<meta name = "description" content ="Brønnøysundregistrene">
 
 	<meta name = "author" content ="Stian Skulstad">
 
-	<link rel="stylesheet" href="bronnoysundv1.css">
+	<link rel="stylesheet" href="bronnoysund.css">
+
+	<script src="script/company_query_params.js"></script>
 
 	<!-- <script type="text/javascript" src="users.js"></script> -->
 
-	<title>Skandiabanken</title>
+	<title>Brønnøysundregistrene</title>
 
 </head>
 
@@ -75,46 +77,30 @@
 
 	</header>
 
-	<main class = "Site-Content, Site">
-
-				<section id="navbar">
-			<p><a href="#"> First Page </a></p>
-			<!-- <p>  |  </p> -->
-			<p><a id="middleMenuItem" href="#"> Second Page </a></p> 
-			<!-- <p>  |  </p> -->
-			<p><a href="#"> Third Page </a></p>
-
-		</section>
-
+	<main class = "Site">
 			<form action="#" name="main_form">
 				<input id="search" type="text" name="search">
-				<input onclick="handleClick()" id="searchbutton" type="submit" name="submit" value="Last inn">
+				<input id="searchbutton" type="submit" value="Søk">
+				<!-- <input onclick="handleClick()" id="searchbutton" type="submit" name="submit" value="Last inn"> -->
+				<!-- <img id="questionmark" src="question_mark.png"> -->
+				<a href="#" id="questionmark">? <span> Søk etter foretaksnavn eller organisasjonsnummer </span></a>
+
 			</form>
 
-<!-- 
-		<button type="button">Add row</button> 
 
-	-->
 		</br> </br>
 
 	
 
 
 		<table id="main_data_table">
-			<!-- <caption><h3></h3></caption> -->
-			<tr><th>Dato</th><th>Beskrivelse</th><th>Inn</th><th>Ut</th></tr>
-
+			<tr><th>Orgnr.</th><th>Navn</th><th>Poststed</th><th>Stiftelsesdato</th></tr>
 		</table>
 
 
 	</main>
 
-	<!-- 
-	<footer>
-		<hr>
-		<center> Skandiabanken | <a class = "footer_text" href="stian@skandiabanken.no"> Send mail Something clever </a> </center>
-	</footer>
-	--> 
-	<script src="Skandiabanken.js"></script>
+	
+	<script src="script/bronnoysund.js"></script>
 </body>
 </html>

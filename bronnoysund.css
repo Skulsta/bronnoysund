@@ -1,0 +1,108 @@
+
+html {
+	background-color: #f5f5f5;
+	color: #000;
+}
+
+
+.Site {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.Site-content {
+	display: flex;
+	flex: 1;
+	align-items: center;
+}
+
+
+footer { 
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+form {
+	padding-top: 100px;
+	padding-bottom: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+
+#search {
+	width: 150px;
+	font-size: 16px;
+	margin: 2px;
+}
+
+#searchbutton {
+	margin: 2px;
+	border: 1px;
+	width: 80px;
+	height: 35px;
+}
+
+
+#questionmark {
+	margin: 2px;
+	width: 20px;
+	height: 35px;
+	font-size: 30px;
+}
+
+
+#questionmark span {
+	display: none;
+}
+
+
+#questionmark:hover span {
+	display:block;
+    top:1em; left:1em; width:12em;
+    border:1px solid #000;
+    text-align: center
+}
+
+span {
+	font-size: 15px;
+}
+
+
+.header__logo {
+	padding-top: 10px;
+}
+
+
+a:link, a:visited {
+	color: black;
+}
+
+
+
+#main_data_table {
+	width: 40vw;
+	border-bottom: 1px solid black;
+}
+
+
+
+th, {
+	/** padding-bottom: 10px; */
+}
+
+td {
+	/** padding: 10px; */
+	width: 30px;
+	padding-left: 50px; 
+	padding-top: 10px;
+}
+
+
+

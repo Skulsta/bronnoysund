@@ -124,7 +124,7 @@ function add_row(table, left, right) {
                     var description = document.createElement("a");
                     var linkText = document.createTextNode(object["hjemmeside"]);
                     description.appendChild(linkText);
-                    // description.href = object["hjemmeside"];
+                    description.href = "https://" + object["hjemmeside"];
                     hjemmeside.appendChild(description);
                     break;
                 default:

@@ -7,7 +7,10 @@ var input = document.querySelector("input[name = 'search']");
 var knapp = document.getElementById("searchbutton");
 var main_table = document.getElementById("main_data_table");
 
-function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, stiftelsesdato) {
+
+
+
+function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, registreringsdatoEnhetsregisteret) {
 	new_row = document.createElement("TR");
 	organisasjonsnummer_cell = document.createElement("TD");
 	organisasjonsnummer_cell.appendChild(organisasjonsnummer);
@@ -21,16 +24,15 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, st
 	organisasjonsform_cell.appendChild(organisasjonsform);
 	new_row.appendChild(organisasjonsform_cell);
 
-	stiftelsesdato_cell = document.createElement("TD");
-	stiftelsesdato_cell.appendChild(stiftelsesdato);
-	new_row.appendChild(stiftelsesdato_cell);
+	registreringsdatoEnhetsregisteret_cell = document.createElement("TD");
+	registreringsdatoEnhetsregisteret_cell.appendChild(registreringsdatoEnhetsregisteret);
+	new_row.appendChild(registreringsdatoEnhetsregisteret_cell);
 	
 	table.appendChild(new_row);
 }
 
 function isBankrupt(dataobjekt) {
 		if(dataobjekt === "J") {
-			console.log(dataobjekt["konkurs"]);
 			return true;
 		}
 	}
@@ -52,36 +54,55 @@ function display_companies() {
     			foretaksnavn.style.color = "red";
 
     		var adresseobjekt = dataobjekt["forretningsadresse"];
-    		var poststed = document.createTextNode(adresseobjekt["poststed"]);
-    		var stiftelsesdato =document.createTextNode(dataobjekt["stiftelsesdato"]);
+    		if(adresseobjekt)
+    			var poststed = document.createTextNode(adresseobjekt["poststed"]);
+    		var registreringsdatoEnhetsregisteret =document.createTextNode(dataobjekt["registreringsdatoEnhetsregisteret"]);
 
-
-    		add_row(main_table, organisasjonsnummer, foretaksnavn, poststed, stiftelsesdato);
+    		add_row(main_table, organisasjonsnummer, foretaksnavn, poststed, registreringsdatoEnhetsregisteret);
     }
 }
 
+function getInput() {
+	var input = document.forms;
+	console.log(input);
+  	if (isNaN(input)) 
+  	{
+    alert("Must input numbers");
+    return false;
+  	}
+}
 
-window.onload = function() {
+//creates a listener for when you press a key
+window.onkeyup = keyup;
 
+//creates a global Javascript variable
+var inputTextValue;
 
-	query_params = get_query_string_parameters();
+function keyup(e) {
+  //setting your input text to the global Javascript Variable for every key press
+  inputTextValue = e.target.value;
 
+  //listens for you to press the ENTER key, at which point your web address will change to the one you have input in the search box
+  if(inputTextValue) {
+  	if (inputTextValue.length > 2) {
+    	console.log(inputTextValue.length);
+    	console.log(inputTextValue);
+    	makeSearch();
+  		}
+	}
+}
 
-	if (query_params.search) {
+function makeSearch() {
 	var xhr = new XMLHttpRequest();
 
-	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?$filter=startswith%28navn%2C%27" + query_params["search"] + "%27%29", true);
+	xhr.open("GET", "http://data.brreg.no/enhetsregisteret/enhet.json?$filter=startswith%28navn%2C%27" + inputTextValue + "%27%29", true);
 	xhr.responseType = "json";
 	xhr.onload = function() {
 		data = xhr.response["data"];
 
-	
-	display_companies();
-
-	console.log(isBankrupt());
-	
-
-};
+		display_companies();
+	}
 xhr.send();
-}
-}
+};
+
+

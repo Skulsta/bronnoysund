@@ -12,24 +12,6 @@ function add_row(table, left, right) {
 }
 
 
-//Legger til forside bilde
-function addMoviePicture() {
-            movie_id = query_params.id;
-            item_link = document.createElement("A");
-
-            link_pic = document.createElement('img');
-            
-
-            var src = 'https://uncrate.com/p/2017/07/bo-light.jpg';
-            link_pic.src = src;
-            link_pic.id = "cover"
-
-            item_link.appendChild(link_pic);
-
-            /* Want to put the picture somewhere else on the site? Edit results to your id here. */
-            forsideBilde.appendChild(item_link); 
-}
-
 
 /** The movie description.*/
     function getName() {
@@ -68,7 +50,7 @@ function addMoviePicture() {
                 case "navn":
                 var description = document.createElement("p");
                     description.textContent = object[key];
-                    movie.appendChild(description);
+                    navn.appendChild(description);
                     break;
                 case "organisasjonsform":
                     var description = document.createElement("p");
@@ -219,19 +201,6 @@ window.onload = function() {
         object = xhr.response;
 
 
-    console.log(object);
-
-
-
-    console.log("WOO!");
-
-    console.log()
-
-
-    addMoviePicture();
-    // getName();
-    // get_all_info();
-    // getOrgnr();
     all_info();
     
 };

@@ -75,11 +75,8 @@ span {
 }
 
 
-
-/** Copy/pase skandiabanken. Styling av logoen */
-
 .header__logo {
-	padding: 20px;
+	padding-top: 10px;
 }
 
 
@@ -87,23 +84,6 @@ a:link, a:visited {
 	color: black;
 }
 
-a:hover {
-	
-}
-
-a:active {
-
-}
-
-
-/** 
-table {
-	border-bottom: 1px solid black;
-	margin: 1px;
-	width: 70vw;
-}
-
-*/
 
 
 #main_data_table {
@@ -124,13 +104,5 @@ td {
 	padding-top: 10px;
 }
 
-
-
-#navbar {
-	display: flex;
-	justify-content: space-around;
-	padding-bottom: 100px;
-
-}
 
 

@@ -42,6 +42,7 @@ form {
 	margin: 2px;
 }
 
+
 #searchbutton {
 	margin: 2px;
 	border: 1px;
@@ -89,8 +90,8 @@ a:link, a:visited {
 #main_data_table {
 	width: 40vw;
 	border-bottom: 1px solid black;
+	align-items: flex-start;
 }
-
 
 
 th, {

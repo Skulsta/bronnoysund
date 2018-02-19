@@ -120,6 +120,13 @@ function add_row(table, left, right) {
                     description.textContent = object["antallAnsatte"];
                     ansatte.appendChild(description);
                     break;
+                case "hjemmeside":
+                    var description = document.createElement("a");
+                    var linkText = document.createTextNode(object["hjemmeside"]);
+                    description.appendChild(linkText);
+                    description.href = "www.knowit.no";
+                    hjemmeside.appendChild(description);
+                    break;
                 default:
                     console.log("done");
                     break;
@@ -163,6 +170,7 @@ function add_row(table, left, right) {
             var description = document.createElement("p");
             description.textContent = "konkurs!";
             konkurs.appendChild(description);
+            description.style.color = "red";
         }
     }
 

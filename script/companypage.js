@@ -172,35 +172,11 @@ function add_row(table, left, right) {
             description.style.color = "red";
         }
     }
-
-
-    function addInfo(value) {
-        var info = document.createElement("p");
-        content = "INFO: " + value;
-
-        movie.appendChild(info);
-    }
-
-
-    function getValue(value) {
-        if (typeof value !== 'object' && value !== null)
-            return value;
-
-
-        for (var key in value){
-                    var newValue = value[key];
-                    return newValue;
-                }
-    }
     
 
 
 window.onload = function() {
-
-    
     query_params = get_query_string_parameters().id;
-    console.log(query_params);
-
 
     var xhr = new XMLHttpRequest();
 

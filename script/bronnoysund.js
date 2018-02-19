@@ -24,9 +24,8 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, re
 
 
 function isBankrupt(dataobjekt) {
-		if(dataobjekt === "J") {
+		if(dataobjekt === "J")
 			return true;
-		}
 	}
 
 

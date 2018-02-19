@@ -1,13 +1,4 @@
-
-
-/** Skulle kunne søke på forskjellige kategorier */
-var input = document.querySelector("input[name = 'search']");
-
-
-var knapp = document.getElementById("searchbutton");
 var main_table = document.getElementById("main_data_table");
-
-
 
 
 function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, registreringsdatoEnhetsregisteret) {
@@ -31,13 +22,13 @@ function add_row(table, organisasjonsnummer, foretaksnavn, organisasjonsform, re
 	table.appendChild(new_row);
 }
 
+
 function isBankrupt(dataobjekt) {
 		if(dataobjekt === "J") {
 			return true;
 		}
 	}
 
-var dataobjekt;
 
 function display_companies() {
     	for (id in data) {
@@ -63,15 +54,6 @@ function display_companies() {
     }
 }
 
-function getInput() {
-	var input = document.forms;
-	console.log(input);
-  	if (isNaN(input)) 
-  	{
-    alert("Must input numbers");
-    return false;
-  	}
-}
 
 //creates a listener for when you press a key
 window.onkeyup = keyup;
@@ -83,7 +65,7 @@ function keyup(e) {
   //setting your input text to the global Javascript Variable for every key press
   inputTextValue = e.target.value;
 
-  //listens for you to press the ENTER key, at which point your web address will change to the one you have input in the search box
+  // Starts searching when user has typed at least three characters.
   if(inputTextValue) {
   	if (inputTextValue.length > 2) {
     	console.log(inputTextValue.length);
@@ -103,6 +85,7 @@ function keyup(e) {
     }
 	}
 }
+
 
 function numberSearch() {
   if(isNaN(inputTextValue) === false && inputTextValue.length === 9)

@@ -1,23 +1,7 @@
 /*
-https://tools.ietf.org/html/rfc1808.html
-  The URL syntax is dependent upon the scheme.  Some schemes use
-  reserved characters like "?" and ";" to indicate special components,
-  while others just consider them to be part of the path.  However,
-  there is enough uniformity in the use of URLs to allow a parser to
-  resolve relative URLs based upon a single, generic-RL syntax.  This
-  generic-RL syntax consists of six components:
-  <scheme>://<net_loc>/<path>;<params>?<query>#<fragment>
-  
-https://tools.ietf.org/html/rfc3986#section-3.4
-  3.4.  Query
-  
-  The query component contains non-hierarchical data that, along with
-  data in the path component (Section 3.3), serves to identify a
-  resource within the scope of the URI's scheme and naming authority
-  (if any).  The query component is indicated by the first question
-  mark ("?") character and terminated by a number sign ("#") character
-  or by the end of the URI.
+Used to access organization number by companypage.js.
 */
+
 
 function get_query_string_parameters() {
     result = {};

@@ -85,11 +85,11 @@ function keyup(e) {
 	}
 }
 
-
+// If user input is 9 characters and all numbers, redirect directly to company page if input matches an organization number.
 function numberSearch() {
   if(isNaN(inputTextValue) === false && inputTextValue.length === 9)
     window.location.href = "companypage.html?id=" + inputTextValue;
-  else
+  else if (inputTextValue)
     makeSearch();
   }
 

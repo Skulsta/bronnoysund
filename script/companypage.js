@@ -12,32 +12,7 @@ function add_row(table, left, right) {
 }
 
 
-
-/** The movie description.*/
-    function getName() {
-        var description = document.createElement("p");
-        content = object["navn"];
-
-            description.textContent = content;
-            movie.appendChild(description);
-    }
-
-
-    /** The movie description.*/
-    function getOrgnr() {
-        var description = document.createElement("p");
-        content = object["organisasjonsnummer"];
-        console.log(content);
-
-            description.textContent = content;
-            orgnr.appendChild(description);
-    }
-
     function all_info() {
-        
-        // description.textContent = object["organisasjonsnummer"];
-        // orgnr.appendChild(description);
-        registere();
 
         for (var key in object) {
             var property = object[key];
@@ -185,7 +160,7 @@ window.onload = function() {
     xhr.onload = function() {
         object = xhr.response;
 
-
+    registere();
     all_info();
     
 };

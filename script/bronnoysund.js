@@ -85,12 +85,22 @@ function keyup(e) {
 	}
 }
 
+
 // If user input is 9 characters and all numbers, redirect directly to company page if input matches an organization number.
 function numberSearch() {
   if(isNaN(inputTextValue) === false && inputTextValue.length === 9)
     window.location.href = "companypage.html?id=" + inputTextValue;
   else if (inputTextValue)
     makeSearch();
+  }
+
+
+  // Used to update the table when new keys are pressed.
+  function removeTable() {
+    var Parent = document.getElementById("main_data_table");
+    while(Parent.hasChildNodes()) {
+      Parent.removeChild(Parent.firstChild);
+    }
   }
 
 
@@ -101,6 +111,8 @@ function makeSearch() {
 	xhr.responseType = "json";
 	xhr.onload = function() {
 		data = xhr.response["data"];
+
+    removeTable();
 
 		display_companies();
 	}

@@ -14,6 +14,7 @@ function add_row(table, left, right) {
 
     function all_info() {
 
+
         for (var key in object) {
             var property = object[key];
             switch (key) {
@@ -97,7 +98,7 @@ function add_row(table, left, right) {
                     break;
                 case "hjemmeside":
                     var description = document.createElement("a");
-                    var linkText = document.createTextNode(object["hjemmeside"]);
+                    var linkText = document.createTextNode("Hjemmeside");
                     description.appendChild(linkText);
                     description.href = "https://" + object["hjemmeside"];
                     hjemmeside.appendChild(description);
@@ -137,8 +138,9 @@ function add_row(table, left, right) {
             description.textContent = "Stiftelsesregisteret";
             registre.appendChild(description);
         }
+    }
 
-
+    function displayBankrupt() {
         value = object["konkurs"];
         if(value === "J") {
             var description = document.createElement("p");
@@ -160,8 +162,10 @@ window.onload = function() {
     xhr.onload = function() {
         object = xhr.response;
 
-    registere();
+
     all_info();
+    registere();
+    displayBankrupt();
     
 };
 xhr.send();

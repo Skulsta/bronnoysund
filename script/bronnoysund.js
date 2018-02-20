@@ -108,8 +108,7 @@ function makeSearch() {
 		data = xhr.response["data"];
 
     removeTable();
-
-		display_companies();
+    display_companies();
 	}
 xhr.send();
 };

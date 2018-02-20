@@ -1,5 +1,5 @@
 /*
-Used to access organization number by companypage.js.
+Used to access organization number by companypage.js. Overkill. Should be fixed.
 */
 
 

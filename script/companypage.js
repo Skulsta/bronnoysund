@@ -11,9 +11,9 @@ function add_row(table, left, right) {
     table.appendChild(new_row);
 }
 
-
+/* One big, terrible switch statement to create and add data to
+the correct location in companypage.html. */
     function all_info() {
-
 
         for (var key in object) {
             var property = object[key];
@@ -109,8 +109,9 @@ function add_row(table, left, right) {
         }
     }
 
-
-    function registere() {
+    /* If a given company is registered in any of the four
+    possible registers, it gets added to the company page. */
+    function registers() {
         var value = object["registrertIMvaregisteret"];
         if(value === "J") {
             var description = document.createElement("p");
@@ -140,6 +141,7 @@ function add_row(table, left, right) {
         }
     }
 
+    
     function displayBankrupt() {
         value = object["konkurs"];
         if(value === "J") {
@@ -164,7 +166,7 @@ window.onload = function() {
 
 
     all_info();
-    registere();
+    registers();
     displayBankrupt();
     
 };

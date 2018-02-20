@@ -64,35 +64,30 @@ function keyup(e) {
   //setting your input text to the global Javascript Variable for every key press
   inputTextValue = e.target.value;
 
+  /*
+  if(e.keyCode === 13) {
+    numberSearch();
+  }
+  */
+
   // Starts searching when user has typed at least three characters.
   if(inputTextValue) {
-  	if (inputTextValue.length > 2) {
-    	console.log(inputTextValue.length);
-    	console.log(inputTextValue);
-    	makeSearch();
-  		}
-
-    if(inputTextValue.length === 9 ) {
-      console.log("YAY");
-      var realValue = document.getElementById("companySearch").value;
-      console.log(realValue);
-    }
-
-    if(e.keyCode == 13) {
-      console.log("You hit enter!");
+  	if (inputTextValue.length > 2)
       numberSearch();
     }
-	}
-}
+  }
+
+      // var realValue = document.getElementById("companySearch").value;
+      // window.location.href = "companypage.html?id=" + inputTextValue;
 
 
 // If user input is 9 characters and all numbers, redirect directly to company page if input matches an organization number.
 function numberSearch() {
-  if(isNaN(inputTextValue) === false && inputTextValue.length === 9)
+  if(isNaN(inputTextValue) === false && inputTextValue.length === 9) {
     window.location.href = "companypage.html?id=" + inputTextValue;
-  else if (inputTextValue)
+  } else
     makeSearch();
-  }
+}
 
 
   // Used to update the table when new keys are pressed.
@@ -118,5 +113,6 @@ function makeSearch() {
 	}
 xhr.send();
 };
+
 
 
